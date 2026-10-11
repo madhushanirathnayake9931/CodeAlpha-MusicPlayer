@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Music Player</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+    <div class="music-container">
+
+    
+     <!-- LEFT COLUMN - PLAYLIST -->
+
+        <div class="playlist">
+            <div class="playlist-header">
+                <h2>
+                    <i class="fa-solid fa-list"></i>
+                    Playlist
+                </h2>
+                <span id="song-count">
+                    3 Songs
+                </span>
+            </div>
+
+            <div class="song-list">
+                <!-- SONG 1 -->
+                <div class="song active"
+                     data-index="0">
+                    <img src="images/song1.jpg"
+                         alt="Song">
+                    <div class="song-details">
+                        <h3>Perfect</h3>
+                        <p>Ed Sheeran</p>
+                    </div>
+                    <i class="fa-solid fa-play song-icon"></i>
+                </div>
+
+                <!-- SONG 2 -->
+                <div class="song"
+                     data-index="1">
+                    <img src="images/song2.jpg"
+                         alt="Song">
+                    <div class="song-details">
+                        <h3>Shape of You</h3>
+                        <p>Ed Sheeran</p>
+                    </div>
+                    <i class="fa-solid fa-play song-icon"></i>
+                </div>
+
+
+                <!-- SONG 3 -->
+                <div class="song"
+                     data-index="2">
+                    <img src="images/song3.jpg"
+                         alt="Song">
+                    <div class="song-details">
+                        <h3>Faded</h3>
+                        <p>Alan Walker</p>
+                    </div>
+                    <i class="fa-solid fa-play song-icon"></i>
+                </div>
+
+
+            </div>
+        </div>
+
+
+             <!-- MIDDLE COLUMN - MUSIC PLAYER -->
+
+        <div class="player">
+
+            <!-- Player Header -->
+            <div class="player-header">
+                <h2>
+                    <i class="fa-solid fa-music"></i>
+                    Now Playing
+                </h2>
+            </div>
+
+
+            <!-- Album Cover -->
+            <div class="album-container">
+                <img id="cover"
+                     src="images/song1.jpg"
+                     alt="Album Cover">
+            </div>
+
+
+            <!-- Song Information -->
+            <div class="song-info">
+                <h1 id="title">Perfect</h1>
+                <p id="artist">Ed Sheeran</p>
+            </div>
+
+
+            <!-- Audio -->
+            <audio id="audio"></audio>
+
+
+            <!-- Progress -->
+
+            <div class="progress-area">
+                <div class="time">
+                    <span id="current-time">
+                        0:00
+                    </span>
+                    <span id="duration">
+                        0:00
+                    </span>
+                </div>
+
+
+                <input type="range"
+                       id="progress"
+                       value="0"
+                       min="0"
+                       max="100">
+
+            </div>
+
+
+            <!-- Controls -->
+
+            <div class="controls">
+                <button id="prev"
+                        class="control-btn">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+
+
+                <button id="play"
+                        class="play-btn">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+
+                <button id="next"
+                        class="control-btn">
+
+                    <i class="fa-solid fa-forward-step"></i>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- Volume -->
+            <div class="volume">
+                <i class="fa-solid fa-volume-low"></i>
+                <input type="range"
+                       id="volume"
+                       min="0"
+                       max="1"
+                       step="0.01"
+                       value="1">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+
+       
+             <!-- RIGHT COLUMN - LYRICS -->
+
+        <div class="lyrics-container">
+
+            <!-- Lyrics Header -->
+            <div class="lyrics-header">
+                <h2>
+                    <i class="fa-solid fa-align-left"></i>Lyrics
+                </h2>
+
+
+                <span id="lyrics-song-title">
+                    Perfect
+                </span>
+
+            </div>
+
+
+            <!-- Lyrics Box -->
+
+            <div class="lyrics-box"
+                 id="lyrics-box">
+
+
+                <div id="lyrics">
+
+                    <!-- Lyrics will be inserted using JavaScript -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

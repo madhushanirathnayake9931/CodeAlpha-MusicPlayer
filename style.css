@@ -1,0 +1,559 @@
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+
+        radial-gradient(
+            circle at top left,
+            #3b1d5a,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #123d5a,
+            transparent 35%
+        ),
+
+        #090b14;
+
+    color: white;
+    padding: 25px;
+}
+
+
+/* MAIN CONTAINER - 3 COLUMNS */
+.music-container {
+    width: 1200px;
+    max-width: 100%;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns:
+        0.8fr
+        0.9fr
+        1.55fr;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(20px);
+
+}
+
+/* LEFT - PLAYLIST */
+.playlist {
+
+    padding: 30px;
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+/* Playlist Header */
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.playlist-header h2 {
+    font-size: 21px;
+}
+
+
+.playlist-header h2 i {
+    margin-right: 8px;
+}
+
+
+.playlist-header span {
+    font-size: 12px;
+    color: #999;
+}
+
+
+/* SONG ITEM */
+.song {
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition:
+        0.3s ease;
+    border:
+        1px solid
+        transparent;
+
+}
+
+
+.song:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+    transform:
+        translateX(5px);
+
+}
+
+
+.song.active {
+
+    background:
+        rgba(139, 92, 246, 0.18);
+    border-color:
+        rgba(139, 92, 246, 0.4);
+
+}
+
+
+/* Song Image */
+
+.song img {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+
+
+/* Song Details */
+
+.song-details {
+    flex: 1;
+
+}
+
+
+.song-details h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+
+}
+
+
+.song-details p {
+    font-size: 12px;
+    color: #999;
+
+}
+
+
+/* Song Icon */
+
+.song-icon {
+    font-size: 13px;
+    color: #888;
+
+}
+
+
+.song.active .song-icon {
+    color: #a78bfa;
+}
+
+/* MIDDLE - PLAYER */
+
+
+.player {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+/* Player Header */
+
+.player-header {
+
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+
+.player-header h2 {
+
+    text-align: center;
+    font-size: 18px;
+
+}
+
+
+.player-header i {
+    margin-right: 8px;
+
+}
+
+
+/* ALBUM COVER */
+
+.album-container {
+
+    width: 260px;
+    height: 260px;
+    max-width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 0 25px;
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.5);
+
+}
+
+
+.album-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        0.4s ease;
+
+}
+
+
+.album-container img:hover {
+    transform:
+        scale(1.05);
+
+}
+
+
+/* SONG INFORMATION */
+.song-info {
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+
+
+.song-info h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+
+.song-info p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* PROGRESS */
+
+.progress-area {
+    width: 100%;
+
+}
+
+
+.time {
+
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 11px;
+    margin-bottom: 8px;
+
+}
+
+
+input[type="range"] {
+
+    width: 100%;
+    cursor: pointer;
+    accent-color: #8b5cf6;
+
+}
+
+
+/*CONTROLS*/
+
+.controls {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 25px 0;
+
+}
+
+
+.control-btn,
+.play-btn {
+
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        0.3s ease;
+
+}
+
+
+.control-btn {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    font-size: 19px;
+
+}
+
+
+.control-btn:hover {
+    color: #a78bfa;
+    transform:
+        scale(1.15);
+
+}
+
+
+.play-btn {
+
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    font-size: 21px;
+    box-shadow:
+        0 8px 25px
+        rgba(139, 92, 246, 0.4);
+
+}
+
+
+.play-btn:hover {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* VOLUME */
+
+.volume {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #999;
+}
+
+
+.volume input {
+    flex: 1;
+
+}
+
+
+/* RIGHT - LYRICS */
+
+.lyrics-container {
+    padding: 30px;
+    background:
+        rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+}
+
+
+/* Lyrics Header */
+
+.lyrics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+
+.lyrics-header h2 {
+    font-size: 21px;
+
+}
+
+
+.lyrics-header h2 i {
+    margin-right: 8px;
+
+}
+
+
+.lyrics-header span {
+    font-size: 11px;
+    color: #999;
+
+}
+
+
+/* LYRICS BOX */
+
+.lyrics-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 8px;
+    scroll-behavior: smooth;
+}
+
+
+/* Scrollbar */
+
+.lyrics-box::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+.lyrics-box::-webkit-scrollbar-track {
+    background:
+        transparent;
+}
+
+
+.lyrics-box::-webkit-scrollbar-thumb {
+    background:
+        #8b5cf6;
+    border-radius: 10px;
+}
+
+
+/* Lyrics Line */
+
+.lyric-line {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+    margin: 20px 0;
+    transition:
+        all 0.4s ease;
+}
+
+
+/* Active Lyrics */
+
+.lyric-line.active {
+
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    transform:
+        scale(1.03);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .music-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .lyrics-container {
+        grid-column:
+            1 / -1;
+        min-height: 400px;
+    }
+
+    .player {
+        border-right: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 10px;
+    }
+
+
+    .music-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .playlist {
+        border-right: none;
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.1);
+    }
+
+
+    .player {
+        border-right: none;
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.1);
+    }
+
+
+    .lyrics-container {
+        min-height: 400px;
+    }
+
+
+    .album-container {
+        width: 220px;
+        height: 220px;
+
+    }
+
+}
+
